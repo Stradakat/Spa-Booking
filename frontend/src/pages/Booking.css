@@ -1,0 +1,210 @@
+/* Booking.css - Main booking page styling */
+
+.booking-page {
+  min-height: 100vh;
+  background: var(--color-off-white);
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.booking-page .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  box-sizing: border-box;
+}
+
+/* Header section */
+.booking-page__header {
+  text-align: center;
+  margin-bottom: var(--spacing-4xl);
+}
+
+.booking-page__header h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-warm-grey-900);
+  margin-bottom: var(--spacing-md);
+}
+
+.booking-page__subtitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-warm-grey-600);
+  font-weight: var(--font-weight-light);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Loading state */
+.booking-page__loading {
+  text-align: center;
+  padding: var(--spacing-4xl) 0;
+}
+
+.booking-page__loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--color-warm-grey-200);
+  border-top: 3px solid var(--color-sage);
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-lg) auto;
+}
+
+.booking-page__loading p {
+  color: var(--color-warm-grey-600);
+  font-size: var(--font-size-lg);
+}
+
+/* Content layout */
+.booking-page__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4xl);
+}
+
+/* Services preview section */
+.booking-page__services {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.booking-page__services-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-warm-grey-900);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.booking-page__services-description {
+  font-size: var(--font-size-lg);
+  color: var(--color-warm-grey-600);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-xl) auto;
+  line-height: 1.6;
+}
+
+.booking-page__services-cta {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+}
+
+/* Services carousel container */
+.booking-page__services .service-carousel {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Enhance carousel for booking page */
+.booking-page__services .service-carousel__card {
+  background: var(--color-white);
+  border: 2px solid var(--color-warm-grey-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.booking-page__services .service-carousel__card:hover {
+  border-color: var(--color-sage);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Form section */
+.booking-page__form {
+  margin-top: var(--spacing-2xl);
+}
+
+.booking-page__form-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-warm-grey-900);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .booking-page .container {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .booking-page__header h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .booking-page__subtitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .booking-page__content {
+    gap: var(--spacing-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-page .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .booking-page__header {
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .booking-page__header h1 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .booking-page__subtitle {
+    font-size: var(--font-size-base);
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .booking-page__services-title,
+  .booking-page__form-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .booking-page__content {
+    gap: var(--spacing-xl);
+  }
+}
+
+/* Accessibility improvements */
+.booking-page__service-card:focus-within {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .booking-page__service-card {
+    transition: none;
+  }
+  
+  .booking-page__service-card:hover {
+    transform: none;
+  }
+  
+  .booking-page__loading-spinner {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .booking-page__service-card {
+    border: 2px solid var(--color-warm-grey-400);
+  }
+  
+  .booking-page__service-duration,
+  .booking-page__service-category {
+    background: var(--color-warm-grey-300);
+    border: 1px solid var(--color-warm-grey-500);
+  }
+}

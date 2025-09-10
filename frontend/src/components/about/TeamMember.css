@@ -1,0 +1,123 @@
+/* TeamMember.css - Team member profile styling */
+
+.team-member {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  height: 100%;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.team-member:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.team-member__image {
+  margin-bottom: var(--spacing-xl);
+  display: flex;
+  justify-content: center;
+}
+
+.team-member__image-placeholder {
+  width: 120px;
+  height: 120px;
+  background: var(--color-sage);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-fast);
+}
+
+.team-member:hover .team-member__image-placeholder {
+  transform: scale(1.05);
+}
+
+.team-member__content {
+  flex-grow: 1;
+}
+
+.team-member__name {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-warm-grey-900);
+  margin-bottom: var(--spacing-xs);
+}
+
+.team-member__role {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-sage-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.team-member__specialty {
+  font-size: var(--font-size-sm);
+  color: var(--color-warm-grey-600);
+  margin-bottom: var(--spacing-md);
+  font-style: italic;
+}
+
+.team-member__bio {
+  font-size: var(--font-size-sm);
+  color: var(--color-warm-grey-700);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .team-member {
+    padding: var(--spacing-lg);
+  }
+  
+  .team-member__image-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .team-member__name {
+    font-size: var(--font-size-lg);
+  }
+  
+  .team-member__role {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Accessibility improvements */
+.team-member:focus-within {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .team-member,
+  .team-member__image-placeholder {
+    transition: none;
+  }
+  
+  .team-member:hover {
+    transform: none;
+  }
+  
+  .team-member:hover .team-member__image-placeholder {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .team-member {
+    border: 2px solid var(--color-warm-grey-300);
+  }
+  
+  .team-member__image-placeholder {
+    border: 2px solid var(--color-warm-grey-400);
+  }
+}
